@@ -1,7 +1,7 @@
 <HTML>
 <head>
     <link href="stylesheet.css" rel="stylesheet" type="text/css" media="all" />
-
+    <script src="javascriptFile.js"></script>
 	<title>
 		Alarm Clock
 	</title>
@@ -9,60 +9,30 @@
 
 <body>
 <div id="currentTime">
-	Current time
 	<script type="text/javascript">
-    function addZero(i){
-        if(i < 10)
-            i = "0" + i;
-            
-        return i;
-    }
-            function updateClock() {
-                var now = new Date();
-               
-                    s = addZero(now.getSeconds());
-                    m = addZero(now.getMinutes());
-                    h = now.getHours();
-                    mer = "AM";
-                    if(h>12)
-                        mer = "PM";
-                    else
-                        mer = "AM";
-                    h=h%12;
-                    h=addZero(h);
-                document.getElementById('currentTime').innerHTML = h+':'+m+':'+s+' '+mer;
-                // call this function again in 1000ms
-                setTimeout(updateClock, 1000);
-            }
             updateClock();
 	</script>
 </div>
 
 <div id="currentDate">
     <script type="text/javascript">
-        function updateDate(){
-            var now = new Date();
-            var months = ['January', 'February', 'March','April','May','June',
-                              'July','August','September','October','November','December']; 
-            var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-            var dates = now.getDate()+" "+months[now.getMonth()]+" "+now.getFullYear()
-     
-                document.getElementById('currentDate').innerHTML = days[now.getDay()]+', '+dates;
-
-             // call this function again in 1000ms
-            setTimeout(updateDate, 1000);
-        }
-        updateDate();
+            updateDate();
     </script>
 </div>
 
 <div id="setAlarm">
-	Click to set alarm
+    <form action="#" method="post" onsubmit="return ValidationEvent()">
+        <input id="h" name="name" placeholder="HOURS" type="text">
+        <input id="m" name="email" placeholder="MINUTES" type="text">
+        <input id="s" name="contact" placeholder="SECONDS" type="text">
+        <input type="submit" value="Set Alarm">
+    </form>
+
 </div>
 
 <div id="upcomingAlarm">
 	Alarm about to ring
+
 </div>
 
 </body>
