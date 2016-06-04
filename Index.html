@@ -20,19 +20,22 @@
     </script>
 </div>
 
-<div id="setAlarm">
+<div id ="show_setAlarm">
+    <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" align = "middle" width="50px" onclick="show('setAlarm')" />
+</div>
+
+<div id="setAlarm" style="  display:none;">
     <form action="#" method="post" onsubmit="return ValidationEvent()">
         <input id="h" name="name" placeholder="HOURS" type="text">
         <input id="m" name="email" placeholder="MINUTES" type="text">
         <input id="s" name="contact" placeholder="SECONDS" type="text">
-        <input type="submit" value="Set Alarm">
+        <input type="submit" value="Set Alarm" onsubmit="return setAlarm()">
     </form>
-
+    <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setAlarm')"/>
 </div>
 
 <div id="upcomingAlarm">
-	Alarm about to ring
-
+    this div will show list of upcoming alarms
 </div>
 
 </body>

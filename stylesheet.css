@@ -23,19 +23,34 @@ font-family: times;
 }
 
 #setAlarm{
-height: 10%;
+height: 20%;
 width: 100%;
 text-align: center;
-margin : auto;
 color: white;
 font-family: arial;
 background-color: black;
+padding-top: 15px;
+}
+
+#show_setAlarm{
+height: 15%;
+position: relative;
+background-color: black;
+}
+
+#inner_image{
+width: 50px; 
+height: 50px;
+overflow: auto;
+margin: auto;
+position: absolute;
+top: 0; left: 0; bottom: 0; right: 0;
 }
 
 #upcomingAlarm{
 height: 20%;
 width: 100%;
 text-align: center;
-margin : auto;
 background-color: yellow;
 }
+

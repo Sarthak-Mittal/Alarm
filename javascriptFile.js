@@ -63,7 +63,8 @@ var s = document.getElementById("s").value;
 		{
 			if (s <= 59) 
 			{
-				alert("Alarm set");
+				//alert("Alarm set");
+				setAlarm();
 				return true;
 			} 
 			else 
@@ -89,8 +90,17 @@ var s = document.getElementById("s").value;
 
 function setAlarm()
 {
+	var ds = "hello";
+	document.write(ds);
 
-var hour = document.getElementById('h').value;
-document.getElementById('upcomingAlarm').innerHTML = hour;
+return true;
+}
 
+function show(target){
+	document.getElementById(target).style.display = 'block';
+	document.getElementById("show_setAlarm").style.display = 'none';
+}
+function hide(target){
+	document.getElementById(target).style.display = 'none';
+	document.getElementById("show_setAlarm").style.display = 'block';
 }
