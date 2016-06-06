@@ -21,23 +21,38 @@
 </div>
 
 <div id ="show_setAlarm">
-    <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" align = "middle" width="50px" onclick="show('setAlarm')" />
+    <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
 </div>
 
 <div id="setAlarm" style="  display:none;">
     <form action="#" method="post" onsubmit="return ValidationEvent()">
-        <input id="h" name="name" placeholder="HOURS" type="text">
-        <input id="m" name="email" placeholder="MINUTES" type="text">
-        <input id="s" name="contact" placeholder="SECONDS" type="text">
-        <input type="submit" value="Set Alarm" onsubmit="return setAlarm()">
+        <input id="h" name="hour" placeholder="HOURS" type="text">
+        <input id="m" name="minutes" placeholder="MINUTES" type="text">
+        <input id="mer1" type="radio" name="meridian" value="AM">AM
+        <input id="mer2" type="radio" name="meridian" value="PM">PM
+        <input type="button" value="Set Alarm" onclick="printAlarm()"/>
     </form>
     <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setAlarm')"/>
 </div>
 
 <div id="upcomingAlarm">
-    this div will show list of upcoming alarms
+    <div id="showAlarm1">
+
+    </div>
+    <div id="showAlarm2">
+        
+    </div>
+    <div id="showAlarm3">
+        
+    </div>
+    <div id="showAlarm4">
+        
+    </div>
+    <div id="showAlarm5">
+        
+    </div>
 </div>
 
-</body>
 
+</body>
 <HTML>

@@ -23,7 +23,7 @@ font-family: times;
 }
 
 #setAlarm{
-height: 20%;
+height: 18%;
 width: 100%;
 text-align: center;
 color: white;
@@ -39,8 +39,8 @@ background-color: black;
 }
 
 #inner_image{
-width: 50px; 
-height: 50px;
+width: 40px; 
+height: 40px;
 overflow: auto;
 margin: auto;
 position: absolute;
@@ -48,9 +48,39 @@ top: 0; left: 0; bottom: 0; right: 0;
 }
 
 #upcomingAlarm{
-height: 20%;
+height: 45%;
 width: 100%;
 text-align: center;
 background-color: yellow;
 }
 
+#showAlarm1{
+	float: none;
+	width: 33%;
+	height: 20%;
+	background-color: blue;
+}
+#showAlarm2{
+	float: none;
+	width: 33%;
+	height: 20%;
+	background-color: red;
+}
+#showAlarm3{
+	float: none;
+	width: 33%;
+	height: 20%;
+	background-color: white;
+}
+#showAlarm4{
+	float: none;
+	width: 33%;
+	height: 20%;
+	background-color: gray;
+}
+#showAlarm5{
+	float: none;
+	width: 33%;
+	height: 20%;
+	background-color: green;
+}
