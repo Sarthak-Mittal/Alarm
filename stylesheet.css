@@ -8,6 +8,7 @@ font-size: 30px;
 font-size: 10vw;
 font-family: arial;
 text-align: center;
+font-weight: bold;
 }
 
 #currentDate{
@@ -54,33 +55,35 @@ text-align: center;
 background-color: yellow;
 }
 
-#showAlarm1{
+#showAlarm1,#showAlarm2,#showAlarm3,#showAlarm4,#showAlarm5{
+	color: white;
 	float: none;
 	width: 33%;
 	height: 20%;
-	background-color: blue;
+	background-color: black;
 }
-#showAlarm2{
-	float: none;
-	width: 33%;
-	height: 20%;
-	background-color: red;
+
+#showAlarm1_l, #showAlarm2_l, #showAlarm3_l, #showAlarm4_l, #showAlarm5_l{
+	color: white;
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-color: black;
+	font-size: 13px;
+	font-size: 3vw;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
 }
-#showAlarm3{
-	float: none;
-	width: 33%;
-	height: 20%;
-	background-color: white;
-}
-#showAlarm4{
-	float: none;
-	width: 33%;
-	height: 20%;
-	background-color: gray;
-}
-#showAlarm5{
-	float: none;
-	width: 33%;
-	height: 20%;
-	background-color: green;
+#showAlarm1_r, #showAlarm2_r, #showAlarm3_r, #showAlarm4_r, #showAlarm5_r{
+	color: white;
+	float: right;
+	width: 50%;
+	height: 60%;
+	background-color: black;
+	font-size: 13px;
+	font-size: 1.5vw;
+	font-family: arial;
+	text-align: left;
+	margin-top: 20px;
 }

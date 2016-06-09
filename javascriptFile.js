@@ -4,12 +4,12 @@ var hour;
 var mer;
 var status;
 var arr = [0,0,0,0,0];
-var initial_beat_1 = 0;
-var initial_beat_2 = 0;
-var initial_beat_3 = 0;
-var initial_beat_4 = 0;
-var initial_beat_5 = 0;
+var initial_beat = [0,0,0,0,0];
 
+var h0,h1,h2,h3,h4;
+var m0,m1,m2,m3,m4;
+var mer10,mer11,mer12,mer13,mer14;
+var mer20,mer21,mer22,mer23,mer24;
 
 // below function is just to add 0 at tenth place of number
 function addZero(i)
@@ -39,8 +39,8 @@ function updateClock()
 
     document.getElementById('currentTime').innerHTML = addZero(hour)+':'+min+':'+sec+' '+mer;
 
-    // call this function again in 1000ms
     beat1();beat2();beat3();beat4();beat5();
+    // call this function again in 1000ms
     setTimeout(updateClock, 1000);
 }
 
@@ -109,9 +109,8 @@ function ValidationEvent()
 			}
 			else
 			{
-				status = checkDivStatus();
+				status = checkDivStatus();		
 				printAlarm(status);
-				return true;
 			}   
 		} 
 		else 
@@ -127,51 +126,134 @@ function ValidationEvent()
 	}
 }
 
-
 function printAlarm(status) 
 {
 
+	// Storing Field Values In Variables
+	var h = document.getElementById("h").value;
+	var m = document.getElementById("m").value;
+	var am = document.getElementById("mer1").checked;
+	var pm = document.getElementById("mer2").checked;
 
-if(status == 0)
-	initial_beat_1 = 1;
-else if(status == 1)
-	initial_beat_2 = 1;
-else if(status == 2)
-	initial_beat_3 = 1;
-else if(status == 3)
-	initial_beat_4 = 1;
-else if(status == 4)
-	initial_beat_5 = 1;
+	if(status == 0)
+		{
+			initial_beat[0] = 1;
+			h0=h; m0=m; mer10=am; mer20=pm;
+			printAlarm1();
+			beat1();
 
+		}
+	else if(status == 1)
+		{
+			initial_beat[1] = 1;
+			h1=h; m1=m; mer11=am; mer21=pm;
+			printAlarm2();
+			beat2();
+		}
+	else if(status == 2)
+		{
+			initial_beat[2] = 1;
+			h2=h; m2=m; mer12=am; mer22=pm;
+			printAlarm3();
+			beat3();
+		}
+	else if(status == 3)
+		{
+			initial_beat[3] = 1;
+			h3=h; m3=m; mer13=am; mer23=pm;
+			printAlarm4();
+			beat4();
+		}
+	else if(status == 4)
+		{
+			initial_beat[4] = 1;
+			h4=h; m4=m; mer14=am; mer24=pm;
+			printAlarm5();
+			beat5();
+		}
 }
 
+function printAlarm1()
+{
+		var ampm='AM';
+
+		if(mer10==true)
+			ampm='AM';
+		else if(mer20==true)
+			ampm='PM';
+
+		var string1 = addZero(h0)+':'+addZero(m0)+' '+ampm;
+		document.getElementById('showAlarm1_l').innerHTML = string1;
+}
+function printAlarm2()
+{
+		var ampm='AM';
+
+		if(mer11==true)
+			ampm='AM';
+		else if(mer21==true)
+			ampm='PM';
+
+		var string1 = addZero(h1)+':'+addZero(m1)+' '+ampm;
+		document.getElementById('showAlarm2_l').innerHTML = string1;
+}
+function printAlarm3()
+{
+		var ampm='AM';
+
+		if(mer12==true)
+			ampm='AM';
+		else if(mer22==true)
+			ampm='PM';
+
+		var string1 = addZero(h2)+':'+addZero(m2)+' '+ampm;
+		document.getElementById('showAlarm3_l').innerHTML = string1;
+}
+function printAlarm4()
+{
+		var ampm='AM';
+
+		if(mer13==true)
+			ampm='AM';
+		else if(mer23==true)
+			ampm='PM';
+
+		var string1 = addZero(h3)+':'+addZero(m3)+' '+ampm;
+		document.getElementById('showAlarm4_l').innerHTML = string1;
+}
+function printAlarm5()
+{
+		var ampm='AM';
+
+		if(mer14==true)
+			ampm='AM';
+		else if(mer24==true)
+			ampm='PM';
+
+		var string1 = addZero(h4)+':'+addZero(m4)+' '+ampm;
+		document.getElementById('showAlarm5_l').innerHTML = string1;
+}
 
 
 function beat1()
 {
 
-	if(initial_beat_1)
+	if(initial_beat[0])
 	{
-		// Storing Field Values In Variables
-		var h = document.getElementById("h").value;
-		var m = document.getElementById("m").value;
-		var mer1 = document.getElementById("mer1").checked;
-		var mer2 = document.getElementById("mer2").checked;
-
 		var ampm='AM';
 		var aRing_min;
 		var aRing_hour;
 		var aRing_sec;
 		aRing_sec = 59 - sec; 
-
-		if(mer1)
+	
+		if(mer10==true)
 			ampm='AM';
-		else if(mer2)
+		else if(mer20==true)
 			ampm='PM';
 
 
-		aRing_min = (60-min)+(m-1);
-		aRing_hour = (h-hour)-1;
+		aRing_min = (60-min)+(m0-1);
+		aRing_hour = (h0-hour)-1;
 		if(aRing_min>60)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
@@ -181,46 +263,35 @@ function beat1()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h <= hour)
+			if(h0 < hour)
 				aRing_hour = 24 + aRing_hour;
 			
 
-		var stringg = "alarm set for - "+addZero(h)+':'+addZero(m)+' '+
-						ampm+'<br>Will ring in - '+addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
-
-
-			document.getElementById('showAlarm1').innerHTML = stringg;
-
+		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
+		document.getElementById('showAlarm1_r').innerHTML = string2;
 	}
-
 }
-
 
 function beat2()
 {
 
-	if(initial_beat_2)
+	if(initial_beat[1])
 	{
-		// Storing Field Values In Variables
-		var h = document.getElementById("h").value;
-		var m = document.getElementById("m").value;
-		var mer1 = document.getElementById("mer1").checked;
-		var mer2 = document.getElementById("mer2").checked;
-
+		
 		var ampm='AM';
 		var aRing_min;
 		var aRing_hour;
 		var aRing_sec;
 		aRing_sec = 59 - sec; 
-
-		if(mer1)
+	
+		if(mer11==true)
 			ampm='AM';
-		else if(mer2)
+		else if(mer21==true)
 			ampm='PM';
 
 
-		aRing_min = (60-min)+(m-1);
-		aRing_hour = (h-hour)-1;
+		aRing_min = (60-min)+(m1-1);
+		aRing_hour = (h1-hour)-1;
 		if(aRing_min>60)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
@@ -230,44 +301,35 @@ function beat2()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h <= hour)
+			if(h1 < hour)
 				aRing_hour = 24 + aRing_hour;
 			
 
-		var stringg = "alarm set for - "+addZero(h)+':'+addZero(m)+' '+
-						ampm+'<br>Will ring in - '+addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
-
-
-			document.getElementById('showAlarm2').innerHTML = stringg;
-
+		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
+		document.getElementById('showAlarm2_r').innerHTML = string2;
 	}
 }
 
 function beat3()
 {
 
-	if(initial_beat_3)
+	if(initial_beat[2])
 	{
-		// Storing Field Values In Variables
-		var h = document.getElementById("h").value;
-		var m = document.getElementById("m").value;
-		var mer1 = document.getElementById("mer1").checked;
-		var mer2 = document.getElementById("mer2").checked;
-
+		
 		var ampm='AM';
 		var aRing_min;
 		var aRing_hour;
 		var aRing_sec;
 		aRing_sec = 59 - sec; 
-
-		if(mer1)
+	
+		if(mer12==true)
 			ampm='AM';
-		else if(mer2)
+		else if(mer22==true)
 			ampm='PM';
 
 
-		aRing_min = (60-min)+(m-1);
-		aRing_hour = (h-hour)-1;
+		aRing_min = (60-min)+(m2-1);
+		aRing_hour = (h2-hour)-1;
 		if(aRing_min>60)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
@@ -277,44 +339,34 @@ function beat3()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h <= hour)
+			if(h2 < hour)
 				aRing_hour = 24 + aRing_hour;
 			
 
-		var stringg = "alarm set for - "+addZero(h)+':'+addZero(m)+' '+
-						ampm+'<br>Will ring in - '+addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
-
-
-			document.getElementById('showAlarm3').innerHTML = stringg;
-
-	}
+		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
+		document.getElementById('showAlarm3_r').innerHTML = string2;	}
 }
 
 function beat4()
 {
 
-	if(initial_beat_4)
+	if(initial_beat[3])
 	{
-		// Storing Field Values In Variables
-		var h = document.getElementById("h").value;
-		var m = document.getElementById("m").value;
-		var mer1 = document.getElementById("mer1").checked;
-		var mer2 = document.getElementById("mer2").checked;
-
+		
 		var ampm='AM';
 		var aRing_min;
 		var aRing_hour;
 		var aRing_sec;
 		aRing_sec = 59 - sec; 
-
-		if(mer1)
+	
+		if(mer13==true)
 			ampm='AM';
-		else if(mer2)
+		else if(mer23==true)
 			ampm='PM';
 
 
-		aRing_min = (60-min)+(m-1);
-		aRing_hour = (h-hour)-1;
+		aRing_min = (60-min)+(m3-1);
+		aRing_hour = (h3-hour)-1;
 		if(aRing_min>60)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
@@ -324,44 +376,34 @@ function beat4()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h <= hour)
+			if(h3 < hour)
 				aRing_hour = 24 + aRing_hour;
 			
 
-		var stringg = "alarm set for - "+addZero(h)+':'+addZero(m)+' '+
-						ampm+'<br>Will ring in - '+addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
-
-
-			document.getElementById('showAlarm4').innerHTML = stringg;
-
-	}
+		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
+		document.getElementById('showAlarm4_r').innerHTML = string2;	}
 }
 
 function beat5()
 {
 
-	if(initial_beat_5)
+	if(initial_beat[4])
 	{
-		// Storing Field Values In Variables
-		var h = document.getElementById("h").value;
-		var m = document.getElementById("m").value;
-		var mer1 = document.getElementById("mer1").checked;
-		var mer2 = document.getElementById("mer2").checked;
 
 		var ampm='AM';
 		var aRing_min;
 		var aRing_hour;
 		var aRing_sec;
 		aRing_sec = 59 - sec; 
-
-		if(mer1)
+	
+		if(mer14==true)
 			ampm='AM';
-		else if(mer2)
+		else if(mer24==true)
 			ampm='PM';
 
 
-		aRing_min = (60-min)+(m-1);
-		aRing_hour = (h-hour)-1;
+		aRing_min = (60-min)+(m4-1);
+		aRing_hour = (h4-hour)-1;
 		if(aRing_min>60)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
@@ -371,15 +413,10 @@ function beat5()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h <= hour)
+			if(h4 < hour)
 				aRing_hour = 24 + aRing_hour;
 			
-
-		var stringg = "alarm set for - "+addZero(h)+':'+addZero(m)+' '+
-						ampm+'<br>Will ring in - '+addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
-
-
-			document.getElementById('showAlarm5').innerHTML = stringg;
-
+		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
+		document.getElementById('showAlarm5_r').innerHTML = string2;
 	}
 }
