@@ -11,6 +11,12 @@ var m0,m1,m2,m3,m4;
 var mer10,mer11,mer12,mer13,mer14;
 var mer20,mer21,mer22,mer23,mer24;
 
+function ring()
+{
+	var audio = new Audio('sound/Afterhours.mp3');
+	audio.play();
+}
+
 // below function is just to add 0 at tenth place of number
 function addZero(i)
 {
@@ -173,68 +179,6 @@ function printAlarm(status)
 		}
 }
 
-function printAlarm1()
-{
-		var ampm='AM';
-
-		if(mer10==true)
-			ampm='AM';
-		else if(mer20==true)
-			ampm='PM';
-
-		var string1 = addZero(h0)+':'+addZero(m0)+' '+ampm;
-		document.getElementById('showAlarm1_l').innerHTML = string1;
-}
-function printAlarm2()
-{
-		var ampm='AM';
-
-		if(mer11==true)
-			ampm='AM';
-		else if(mer21==true)
-			ampm='PM';
-
-		var string1 = addZero(h1)+':'+addZero(m1)+' '+ampm;
-		document.getElementById('showAlarm2_l').innerHTML = string1;
-}
-function printAlarm3()
-{
-		var ampm='AM';
-
-		if(mer12==true)
-			ampm='AM';
-		else if(mer22==true)
-			ampm='PM';
-
-		var string1 = addZero(h2)+':'+addZero(m2)+' '+ampm;
-		document.getElementById('showAlarm3_l').innerHTML = string1;
-}
-function printAlarm4()
-{
-		var ampm='AM';
-
-		if(mer13==true)
-			ampm='AM';
-		else if(mer23==true)
-			ampm='PM';
-
-		var string1 = addZero(h3)+':'+addZero(m3)+' '+ampm;
-		document.getElementById('showAlarm4_l').innerHTML = string1;
-}
-function printAlarm5()
-{
-		var ampm='AM';
-
-		if(mer14==true)
-			ampm='AM';
-		else if(mer24==true)
-			ampm='PM';
-
-		var string1 = addZero(h4)+':'+addZero(m4)+' '+ampm;
-		document.getElementById('showAlarm5_l').innerHTML = string1;
-}
-
-
 function beat1()
 {
 
@@ -263,15 +207,19 @@ function beat1()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h0 <= hour)
+		{
+			if(h0 == hour)
 			{
 				if(m0 <= min)
 					aRing_hour = 24 + aRing_hour;
 			}
-
+			if(h0 < hour)
+				aRing_hour = 24 + aRing_hour;
+		}
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[0] = 0;
+					ring();
 				}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -309,16 +257,21 @@ function beat2()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h1 <= hour)
+		{
+			if(h1 == hour)
 			{
 				if(m1 <= min)
 					aRing_hour = 24 + aRing_hour;
 			}
-			
-			if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
-				{
-					initial_beat[1] = 0;
-				}
+			if(h1 < hour)
+				aRing_hour = 24 + aRing_hour;
+		}		
+	
+		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+			{
+				initial_beat[1] = 0;
+				ring();
+			}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm2_r').innerHTML = string2;
@@ -354,15 +307,20 @@ function beat3()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h2 <= hour)
+		{
+			if(h2 == hour)
 			{
 				if(m2 <= min)
 					aRing_hour = 24 + aRing_hour;
 			}
+			if(h2 < hour)
+				aRing_hour = 24 + aRing_hour;
+		}
 
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[2] = 0;
+					ring();
 				}			
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -398,15 +356,20 @@ function beat4()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h3 <= hour)
+		{
+			if(h3 == hour)
 			{
 				if(m3 <= min)
 					aRing_hour = 24 + aRing_hour;
 			}
+			if(h3 < hour)
+				aRing_hour = 24 + aRing_hour;
+		}
 
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[3] = 0;
+					ring();
 				}
 			
 
@@ -443,17 +406,86 @@ function beat5()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h4 <= hour)
+		{
+			if(h4 == hour)
 			{
 				if(m4 <= min)
 					aRing_hour = 24 + aRing_hour;
 			}
-			
+			if(h4 < hour)
+				aRing_hour = 24 + aRing_hour;
+		}			
 			if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 			{
 				initial_beat[4] = 0;
+				ring();
 			}
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm5_r').innerHTML = string2;
 	}
+}
+
+function printAlarm1()
+{
+		var ampm='AM';
+
+		if(mer10==true)
+			ampm='AM';
+		else if(mer20==true)
+			ampm='PM';
+
+		var string1 = addZero(h0)+':'+addZero(m0)+' '+ampm;
+		document.getElementById('showAlarm1_l').innerHTML = string1;
+}
+
+function printAlarm2()
+{
+		var ampm='AM';
+
+		if(mer11==true)
+			ampm='AM';
+		else if(mer21==true)
+			ampm='PM';
+
+		var string1 = addZero(h1)+':'+addZero(m1)+' '+ampm;
+		document.getElementById('showAlarm2_l').innerHTML = string1;
+}
+
+function printAlarm3()
+{
+		var ampm='AM';
+
+		if(mer12==true)
+			ampm='AM';
+		else if(mer22==true)
+			ampm='PM';
+
+		var string1 = addZero(h2)+':'+addZero(m2)+' '+ampm;
+		document.getElementById('showAlarm3_l').innerHTML = string1;
+}
+
+function printAlarm4()
+{
+		var ampm='AM';
+
+		if(mer13==true)
+			ampm='AM';
+		else if(mer23==true)
+			ampm='PM';
+
+		var string1 = addZero(h3)+':'+addZero(m3)+' '+ampm;
+		document.getElementById('showAlarm4_l').innerHTML = string1;
+}
+
+function printAlarm5()
+{
+		var ampm='AM';
+
+		if(mer14==true)
+			ampm='AM';
+		else if(mer24==true)
+			ampm='PM';
+
+		var string1 = addZero(h4)+':'+addZero(m4)+' '+ampm;
+		document.getElementById('showAlarm5_l').innerHTML = string1;
 }
