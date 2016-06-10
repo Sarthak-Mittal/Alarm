@@ -60,7 +60,7 @@ background-color: yellow;
 	float: none;
 	width: 33%;
 	height: 20%;
-	background-color: black;
+	background-color: gray;
 }
 
 #showAlarm1_l, #showAlarm2_l, #showAlarm3_l, #showAlarm4_l, #showAlarm5_l{
@@ -85,5 +85,4 @@ background-color: yellow;
 	font-size: 1.5vw;
 	font-family: arial;
 	text-align: left;
-	margin-top: 20px;
 }
