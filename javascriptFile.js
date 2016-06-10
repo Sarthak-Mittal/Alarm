@@ -254,7 +254,7 @@ function beat1()
 
 		aRing_min = (60-min)+(m0-1);
 		aRing_hour = (h0-hour)-1;
-		if(aRing_min>60)
+		if(aRing_min>59)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
 
@@ -263,12 +263,20 @@ function beat1()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h0 < hour)
-				aRing_hour = 24 + aRing_hour;
-			
+			if(h0 <= hour)
+			{
+				if(m0 <= min)
+					aRing_hour = 24 + aRing_hour;
+			}
+
+		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+				{
+					initial_beat[0] = 0;
+				}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm1_r').innerHTML = string2;
+
 	}
 }
 
@@ -292,7 +300,7 @@ function beat2()
 
 		aRing_min = (60-min)+(m1-1);
 		aRing_hour = (h1-hour)-1;
-		if(aRing_min>60)
+		if(aRing_min>59)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
 
@@ -301,9 +309,16 @@ function beat2()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h1 < hour)
-				aRing_hour = 24 + aRing_hour;
+			if(h1 <= hour)
+			{
+				if(m1 <= min)
+					aRing_hour = 24 + aRing_hour;
+			}
 			
+			if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+				{
+					initial_beat[1] = 0;
+				}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm2_r').innerHTML = string2;
@@ -330,7 +345,7 @@ function beat3()
 
 		aRing_min = (60-min)+(m2-1);
 		aRing_hour = (h2-hour)-1;
-		if(aRing_min>60)
+		if(aRing_min>59)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
 
@@ -339,9 +354,16 @@ function beat3()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h2 < hour)
-				aRing_hour = 24 + aRing_hour;
-			
+			if(h2 <= hour)
+			{
+				if(m2 <= min)
+					aRing_hour = 24 + aRing_hour;
+			}
+
+		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+				{
+					initial_beat[2] = 0;
+				}			
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm3_r').innerHTML = string2;	}
@@ -367,7 +389,7 @@ function beat4()
 
 		aRing_min = (60-min)+(m3-1);
 		aRing_hour = (h3-hour)-1;
-		if(aRing_min>60)
+		if(aRing_min>59)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
 
@@ -376,8 +398,16 @@ function beat4()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h3 < hour)
-				aRing_hour = 24 + aRing_hour;
+			if(h3 <= hour)
+			{
+				if(m3 <= min)
+					aRing_hour = 24 + aRing_hour;
+			}
+
+		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+				{
+					initial_beat[3] = 0;
+				}
 			
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -404,7 +434,7 @@ function beat5()
 
 		aRing_min = (60-min)+(m4-1);
 		aRing_hour = (h4-hour)-1;
-		if(aRing_min>60)
+		if(aRing_min>59)
 			aRing_hour++;
 		aRing_min = aRing_min % 60;
 
@@ -413,9 +443,16 @@ function beat5()
 			aRing_hour+=12;
 
 		if(mer == ampm)
-			if(h4 < hour)
-				aRing_hour = 24 + aRing_hour;
+			if(h4 <= hour)
+			{
+				if(m4 <= min)
+					aRing_hour = 24 + aRing_hour;
+			}
 			
+			if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
+			{
+				initial_beat[4] = 0;
+			}
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm5_r').innerHTML = string2;
 	}
