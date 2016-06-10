@@ -11,10 +11,65 @@ var m0,m1,m2,m3,m4;
 var mer10,mer11,mer12,mer13,mer14;
 var mer20,mer21,mer22,mer23,mer24;
 
-function ring()
+var audio1 = new Audio('sound/Alarm Beep.mp3');
+var audio2 = new Audio('sound/Alarm Beep.mp3');
+var audio3 = new Audio('sound/Alarm Beep.mp3');
+var audio4 = new Audio('sound/Alarm Beep.mp3');
+var audio5 = new Audio('sound/Alarm Beep.mp3');
+	
+function deleteAlarm1()
 {
-	var audio = new Audio('sound/Afterhours.mp3');
-	audio.play();
+	audio1.pause();
+	document.getElementById("showAlarm1_l").style.color = "white";	
+	document.getElementById("showAlarm1_r").style.color = "white";
+	document.getElementById('showAlarm1_r').innerHTML = " ";
+	document.getElementById('showAlarm1_l').innerHTML = " ";	
+	arr[0]=0;
+	initial_beat[0]=0;
+}
+
+function deleteAlarm2()
+{
+	audio2.pause();
+	document.getElementById("showAlarm2_l").style.color = "white";	
+	document.getElementById("showAlarm2_r").style.color = "white";
+	document.getElementById('showAlarm2_r').innerHTML = " ";
+	document.getElementById('showAlarm2_l').innerHTML = " ";	
+	arr[1]=0;
+	initial_beat[1]=0;
+}
+
+function deleteAlarm3()
+{
+	audio3.pause();
+	document.getElementById("showAlarm3_l").style.color = "white";	
+	document.getElementById("showAlarm3_r").style.color = "white";
+	document.getElementById('showAlarm3_r').innerHTML = " ";
+	document.getElementById('showAlarm3_l').innerHTML = " ";	
+	arr[2]=0;
+	initial_beat[2]=0;
+}
+
+function deleteAlarm4()
+{
+	audio4.pause();
+	document.getElementById("showAlarm4_l").style.color = "white";	
+	document.getElementById("showAlarm4_r").style.color = "white";
+	document.getElementById('showAlarm4_r').innerHTML = " ";
+	document.getElementById('showAlarm4_l').innerHTML = " ";	
+	arr[3]=0;
+	initial_beat[3]=0;	
+}
+
+function deleteAlarm5()
+{
+	audio5.pause();
+	document.getElementById("showAlarm5_l").style.color = "white";	
+	document.getElementById("showAlarm5_r").style.color = "white";
+	document.getElementById('showAlarm5_r').innerHTML = " ";
+	document.getElementById('showAlarm5_l').innerHTML = " ";	
+	arr[4]=0;
+	initial_beat[4]=0;
 }
 
 // below function is just to add 0 at tenth place of number
@@ -219,7 +274,9 @@ function beat1()
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[0] = 0;
-					ring();
+					document.getElementById("showAlarm1_l").style.color = "F52A2A";
+					document.getElementById("showAlarm1_r").style.color = "F52A2A";
+					audio1.play();
 				}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -270,7 +327,9 @@ function beat2()
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 			{
 				initial_beat[1] = 0;
-				ring();
+				document.getElementById("showAlarm2_l").style.color = "F52A2A";
+				document.getElementById("showAlarm2_r").style.color = "F52A2A";
+				audio2.play();
 			}
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -320,7 +379,9 @@ function beat3()
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[2] = 0;
-					ring();
+					document.getElementById("showAlarm3_l").style.color = "F52A2A";
+					document.getElementById("showAlarm3_r").style.color = "F52A2A";
+					audio3.play();
 				}			
 
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
@@ -369,7 +430,9 @@ function beat4()
 		if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 				{
 					initial_beat[3] = 0;
-					ring();
+					document.getElementById("showAlarm4_l").style.color = "F52A2A";
+					document.getElementById("showAlarm4_r").style.color = "F52A2A";
+					audio4.play();
 				}
 			
 
@@ -418,7 +481,9 @@ function beat5()
 			if(aRing_hour==0 && aRing_min==0 && aRing_sec==0)
 			{
 				initial_beat[4] = 0;
-				ring();
+				document.getElementById("showAlarm5_l").style.color = "F52A2A";
+				document.getElementById("showAlarm5_r").style.color = "F52A2A";
+				audio5.play();
 			}
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
 		document.getElementById('showAlarm5_r').innerHTML = string2;
