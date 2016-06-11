@@ -24,17 +24,16 @@ font-family: times;
 }
 
 #setAlarm{
-height: 18%;
+height: 20%;
 width: 100%;
 text-align: center;
 color: white;
 font-family: arial;
 background-color: black;
-padding-top: 15px;
 }
 
 #show_setAlarm{
-height: 15%;
+height: 20%;
 position: relative;
 background-color: black;
 }
@@ -60,7 +59,12 @@ background-color: yellow;
 	float: none;
 	width: 33%;
 	height: 20%;
-	background-color: gray;
+	background-color: black;
+}
+#dlt_btn_1, #dlt_btn_2, #dlt_btn_3, #dlt_btn_4, #dlt_btn_5 {
+	float: right;
+	height: 20px;
+	width: 20px;
 }
 
 #showAlarm1_l, #showAlarm2_l, #showAlarm3_l, #showAlarm4_l, #showAlarm5_l{

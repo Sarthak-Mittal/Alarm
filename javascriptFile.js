@@ -16,6 +16,15 @@ var audio2 = new Audio('sound/Alarm Beep.mp3');
 var audio3 = new Audio('sound/Alarm Beep.mp3');
 var audio4 = new Audio('sound/Alarm Beep.mp3');
 var audio5 = new Audio('sound/Alarm Beep.mp3');
+
+function initiate()
+{
+	document.getElementById("dlt_btn_1").style.display = 'none';
+	document.getElementById("dlt_btn_2").style.display = 'none';
+	document.getElementById("dlt_btn_3").style.display = 'none';
+	document.getElementById("dlt_btn_4").style.display = 'none';
+	document.getElementById("dlt_btn_5").style.display = 'none';
+}
 	
 function deleteAlarm1()
 {
@@ -26,6 +35,7 @@ function deleteAlarm1()
 	document.getElementById('showAlarm1_l').innerHTML = " ";	
 	arr[0]=0;
 	initial_beat[0]=0;
+	document.getElementById("dlt_btn_1").style.display = 'none';
 }
 
 function deleteAlarm2()
@@ -37,6 +47,7 @@ function deleteAlarm2()
 	document.getElementById('showAlarm2_l').innerHTML = " ";	
 	arr[1]=0;
 	initial_beat[1]=0;
+	document.getElementById("dlt_btn_2").style.display = 'none';
 }
 
 function deleteAlarm3()
@@ -48,6 +59,7 @@ function deleteAlarm3()
 	document.getElementById('showAlarm3_l').innerHTML = " ";	
 	arr[2]=0;
 	initial_beat[2]=0;
+	document.getElementById("dlt_btn_3").style.display = 'none';
 }
 
 function deleteAlarm4()
@@ -59,6 +71,8 @@ function deleteAlarm4()
 	document.getElementById('showAlarm4_l').innerHTML = " ";	
 	arr[3]=0;
 	initial_beat[3]=0;	
+	document.getElementById("dlt_btn_4").style.display = 'none';
+
 }
 
 function deleteAlarm5()
@@ -70,6 +84,7 @@ function deleteAlarm5()
 	document.getElementById('showAlarm5_l').innerHTML = " ";	
 	arr[4]=0;
 	initial_beat[4]=0;
+	document.getElementById("dlt_btn_5").style.display = 'none';
 }
 
 // below function is just to add 0 at tenth place of number
@@ -202,7 +217,8 @@ function printAlarm(status)
 			h0=h; m0=m; mer10=am; mer20=pm;
 			printAlarm1();
 			beat1();
-
+			document.getElementById("dlt_btn_1").style.display = 'block';
+			document.getElementById("dlt_btn_1").src = "images/delete_alarm_b.png";
 		}
 	else if(status == 1)
 		{
@@ -210,28 +226,32 @@ function printAlarm(status)
 			h1=h; m1=m; mer11=am; mer21=pm;
 			printAlarm2();
 			beat2();
-		}
+			document.getElementById("dlt_btn_2").style.display = 'block';
+			document.getElementById("dlt_btn_2").src = "images/delete_alarm_b.png";		}
 	else if(status == 2)
 		{
 			initial_beat[2] = 1;
 			h2=h; m2=m; mer12=am; mer22=pm;
 			printAlarm3();
 			beat3();
-		}
+			document.getElementById("dlt_btn_3").style.display = 'block';
+			document.getElementById("dlt_btn_3").src = "images/delete_alarm_b.png";		}
 	else if(status == 3)
 		{
 			initial_beat[3] = 1;
 			h3=h; m3=m; mer13=am; mer23=pm;
 			printAlarm4();
 			beat4();
-		}
+			document.getElementById("dlt_btn_4").style.display = 'block';
+			document.getElementById("dlt_btn_4").src = "images/delete_alarm_b.png";		}
 	else if(status == 4)
 		{
 			initial_beat[4] = 1;
 			h4=h; m4=m; mer14=am; mer24=pm;
 			printAlarm5();
 			beat5();
-		}
+			document.getElementById("dlt_btn_5").style.display = 'block';
+			document.getElementById("dlt_btn_5").src = "images/delete_alarm_b.png";		}
 }
 
 function beat1()
@@ -276,6 +296,7 @@ function beat1()
 					initial_beat[0] = 0;
 					document.getElementById("showAlarm1_l").style.color = "F52A2A";
 					document.getElementById("showAlarm1_r").style.color = "F52A2A";
+					document.getElementById("dlt_btn_1").src = "images/alarm_off.png";
 					audio1.play();
 				}
 
@@ -329,6 +350,7 @@ function beat2()
 				initial_beat[1] = 0;
 				document.getElementById("showAlarm2_l").style.color = "F52A2A";
 				document.getElementById("showAlarm2_r").style.color = "F52A2A";
+				document.getElementById("dlt_btn_2").src = "images/alarm_off.png";
 				audio2.play();
 			}
 
@@ -381,6 +403,7 @@ function beat3()
 					initial_beat[2] = 0;
 					document.getElementById("showAlarm3_l").style.color = "F52A2A";
 					document.getElementById("showAlarm3_r").style.color = "F52A2A";
+					document.getElementById("dlt_btn_3").src = "images/alarm_off.png";
 					audio3.play();
 				}			
 
@@ -432,6 +455,7 @@ function beat4()
 					initial_beat[3] = 0;
 					document.getElementById("showAlarm4_l").style.color = "F52A2A";
 					document.getElementById("showAlarm4_r").style.color = "F52A2A";
+					document.getElementById("dlt_btn_4").src = "images/alarm_off.png";
 					audio4.play();
 				}
 			
@@ -483,6 +507,7 @@ function beat5()
 				initial_beat[4] = 0;
 				document.getElementById("showAlarm5_l").style.color = "F52A2A";
 				document.getElementById("showAlarm5_r").style.color = "F52A2A";
+				document.getElementById("dlt_btn_5").src = "images/alarm_off.png";
 				audio5.play();
 			}
 		var string2 = addZero(aRing_hour)+':'+addZero(aRing_min)+':'+addZero(aRing_sec);
