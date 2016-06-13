@@ -23,21 +23,39 @@ color: white;
 font-family: times;
 }
 
-#setAlarm{
-height: 20%;
+#setAlarm, #setRemainder{
+height: 15%;
 width: 100%;
 text-align: center;
 color: white;
 font-family: arial;
-background-color: black;
+background-color: gray;
 }
 
-#show_setAlarm{
-height: 20%;
-position: relative;
-background-color: black;
+#show_set{
+	width: 100%;
+	height: 15%;
+	background-color: blue; 
 }
 
+#child1, #child2, #child3{
+	width: 33.1%;
+	height: 100%; 
+	margin: 0 auto; 
+	position: relative; 
+	background:black;
+	float: left;
+	margin: 1px 1px;
+
+}
+#child1_s, #child2_s, #child3_s{
+	width: 33.333%;
+	height: 100%; 
+	margin: 0 auto; 
+	position: relative; 
+	background:green;
+	float: left;
+}
 #inner_image{
 width: 40px; 
 height: 40px;
@@ -47,19 +65,32 @@ position: absolute;
 top: 0; left: 0; bottom: 0; right: 0;
 }
 
-#upcomingAlarm{
-height: 45%;
+#status_bar{
+height: 50%;
 width: 100%;
 text-align: center;
 background-color: yellow;
 }
 
+#upcomingAlarm, #upcoming_remainders, #stopwatch{
+height: 100%;
+width: 33.1%;
+text-align: center;
+background-color: red;
+margin: 0 auto; 
+position: relative; 
+float: left;
+margin: 1px 1px;
+}
+
 #showAlarm1,#showAlarm2,#showAlarm3,#showAlarm4,#showAlarm5{
 	color: white;
 	float: none;
-	width: 33%;
-	height: 20%;
+	width: 100%;
+	height: 19.7%;
 	background-color: black;
+	margin: 1px 1px;
+
 }
 #dlt_btn_1, #dlt_btn_2, #dlt_btn_3, #dlt_btn_4, #dlt_btn_5 {
 	float: right;
@@ -90,3 +121,4 @@ background-color: yellow;
 	font-family: arial;
 	text-align: left;
 }
+

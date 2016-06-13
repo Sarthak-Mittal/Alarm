@@ -2,6 +2,8 @@
 <head >
     <link href="stylesheet.css" rel="stylesheet" type="text/css" media="all" />
     <script src="javascriptFile.js"></script>
+    <script src="javascriptFile2.js"></script>
+
 	<title>
 		Alarm Clock
 	</title>
@@ -19,9 +21,19 @@
             updateDate();
     </script>
 </div>
+    
+<div id = "show_set">
+    <div id ="child1">
+        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
+    </div>
 
-<div id ="show_setAlarm">
-    <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
+    <div id ="child2">
+        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setRemainder')" />
+    </div>
+
+    <div id ="child3">
+        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
+    </div>
 </div>
 
 <div id="setAlarm" style="  display:none;">
@@ -35,51 +47,70 @@
     <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setAlarm')"/>
 </div>
 
-<div id="upcomingAlarm">
-    <div id="showAlarm1">
-        <img id="dlt_btn_1" src="images/delete_alarm_b.png" onclick="deleteAlarm1()">
-        <div id="showAlarm1_l">
+<div id="setRemainder" style="  display:none;">
+    <form action="#" method="post" >
+        <input id="h" name="hour" placeholder="Hhgvhvghvh" type="text">
+        <input id="m" name="minutes" placeholder="Mfffffff" type="text">
+        <input id="mer1" type="radio" name="meridian" value="AM">AM
+        <input id="mer2" type="radio" name="meridian" value="PM">PM
+        <input type="button" value="Set Alarm" onclick="">
+    </form>
+    <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setRemainder')"/>
+</div>
 
+<div id= "status_bar">
+    <div id="upcomingAlarm">
+        <div id="showAlarm1">
+            <img id="dlt_btn_1" src="images/delete_alarm_b.png" onclick="deleteAlarm1()">
+            <div id="showAlarm1_l">
+
+            </div>
+            <div id="showAlarm1_r">
+            
+            </div>   
         </div>
-        <div id="showAlarm1_r">
-        
-        </div>   
+        <div id="showAlarm2">
+            <img id="dlt_btn_2" src="images/delete_alarm_b.png" onclick="deleteAlarm2()">
+            <div id="showAlarm2_l">
+            
+            </div>
+            <div id="showAlarm2_r">
+            
+            </div>          
+        </div>
+        <div id="showAlarm3">
+            <img id="dlt_btn_3" src="images/delete_alarm_b.png" onclick="deleteAlarm3()">
+            <div id="showAlarm3_l">
+            
+            </div>
+            <div id="showAlarm3_r">
+            
+            </div>   
+        </div>
+        <div id="showAlarm4">
+            <img id="dlt_btn_4" src="images/delete_alarm_b.png" onclick="deleteAlarm4()">
+            <div id="showAlarm4_l">
+            
+            </div>
+            <div id="showAlarm4_r">
+            
+            </div>   
+        </div>
+        <div id="showAlarm5">
+            <img id="dlt_btn_5" src="images/delete_alarm_b.png" onclick="deleteAlarm5()">
+            <div id="showAlarm5_l">
+            
+            </div>
+            <div id="showAlarm5_r">
+            
+            </div>   
+        </div>
     </div>
-    <div id="showAlarm2">
-        <img id="dlt_btn_2" src="images/delete_alarm_b.png" onclick="deleteAlarm2()">
-        <div id="showAlarm2_l">
-        
-        </div>
-        <div id="showAlarm2_r">
-        
-        </div>          
+
+    <div id="upcoming_remainders">
     </div>
-    <div id="showAlarm3">
-        <img id="dlt_btn_3" src="images/delete_alarm_b.png" onclick="deleteAlarm3()">
-        <div id="showAlarm3_l">
-        
-        </div>
-        <div id="showAlarm3_r">
-        
-        </div>   
-    </div>
-    <div id="showAlarm4">
-        <img id="dlt_btn_4" src="images/delete_alarm_b.png" onclick="deleteAlarm4()">
-        <div id="showAlarm4_l">
-        
-        </div>
-        <div id="showAlarm4_r">
-        
-        </div>   
-    </div>
-    <div id="showAlarm5">
-        <img id="dlt_btn_5" src="images/delete_alarm_b.png" onclick="deleteAlarm5()">
-        <div id="showAlarm5_l">
-        
-        </div>
-        <div id="showAlarm5_r">
-        
-        </div>   
+
+    <div id="stopwatch">
     </div>
 </div>
 
