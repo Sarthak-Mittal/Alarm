@@ -23,19 +23,68 @@ color: white;
 font-family: times;
 }
 
-#setAlarm, #setRemainder{
+#set_bar_alarm, #set_bar_remainder{
 height: 15%;
 width: 100%;
+display:none;
+background-color: green;
+}
+#fwd1, #fwd2{
+	height: 100%;
+	width: 10%;	
+	float: left;
+	background-color: black;
+	position: relative;
+	margin: 0 auto; 
+}
+#back1, #back2{
+	height: 100%;
+	width: 10%;	
+	float: left;
+	background-color: black;
+	position: relative;
+	margin: 0 auto;
+}
+#setAlarm, #setRemainder{
+height: 100%;
+width: 80%;
 text-align: center;
 color: white;
 font-family: arial;
-background-color: gray;
+background-color: black;
+position: relative;
+margin: 0 auto; 
+float: left;
 }
+#set1{
+	background-color: black;
+	height: 80%;
+	width: 60%;
+	position: relative;
+	margin: 10px auto;
+}
+#set2{
+	background-color: black;
+	height: 90%;
+	width: 60%;
+	position: relative;
+	margin: 7px auto;
+}
+#SSR1, #SSR2, #SSR3{
+	height: 85%;
+	width: 25%;
+	background-color: black;
+	position: relative;
+	margin: 0 auto;
+	float: left;
+	padding-left: 37px;
+	padding-top: 10px
+} 
 
 #show_set{
 	width: 100%;
 	height: 15%;
-	background-color: blue; 
+	background-color: black; 
 }
 
 #child1, #child2, #child3{
@@ -45,7 +94,6 @@ background-color: gray;
 	position: relative; 
 	background:black;
 	float: left;
-	margin: 1px 1px;
 
 }
 #child1_s, #child2_s, #child3_s{
@@ -72,7 +120,7 @@ text-align: center;
 background-color: yellow;
 }
 
-#upcomingAlarm, #upcoming_remainders, #stopwatch{
+#upcomingAlarm, #upcoming_remainders, #countdown{
 height: 100%;
 width: 33.1%;
 text-align: center;
@@ -81,6 +129,20 @@ margin: 0 auto;
 position: relative; 
 float: left;
 margin: 1px 1px;
+}
+
+#digits{
+height: 25%;
+width: 100%;
+background-color: black;
+color: white;
+margin : auto;
+font-size: 9px;
+font-size: 5vw;
+font-family: arial;
+text-align: center;
+font-weight: bold;
+padding-top: 20%;
 }
 
 #showAlarm1,#showAlarm2,#showAlarm3,#showAlarm4,#showAlarm5{

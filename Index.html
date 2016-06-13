@@ -24,39 +24,93 @@
     
 <div id = "show_set">
     <div id ="child1">
-        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
+        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('set_bar_alarm')" />
     </div>
 
     <div id ="child2">
-        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setRemainder')" />
+        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('set_bar_remainder')" />
     </div>
 
     <div id ="child3">
-        <img id="inner_image" src="images/add_Alarm_Image.png" alt="Add Alarm" onclick="show('setAlarm')" />
+        <div id="SSR1">
+              <img id="" src="images/start.png" width="70px" alt="PLAY" onclick="startCountdown()" />
+        </div>
+        <div id="SSR2">
+              <img id="" src="images/stop.png" width="65px" alt="STOP" onclick="stopCountdown()" />
+        </div>
+        <div id="SSR3">
+              <img id="" src="images/reset.svg" width="65px" alt="RESET" onclick="resetCountdown()" />
+        </div>
     </div>
 </div>
 
-<div id="setAlarm" style="  display:none;">
-    <form action="#" method="post" >
-        <input id="h" name="hour" placeholder="HOURS" type="text">
-        <input id="m" name="minutes" placeholder="MINUTES" type="text">
-        <input id="mer1" type="radio" name="meridian" value="AM">AM
-        <input id="mer2" type="radio" name="meridian" value="PM">PM
-        <input type="button" value="Set Alarm" onclick="ValidationEvent()">
-    </form>
-    <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setAlarm')"/>
+<div id="set_bar_alarm">
+    <div id="setAlarm">
+        <div id="set1">
+            <table width="100%" height="100%" align="center" valign="center">
+                <tr><td>
+                    <form action="#" method="post" style="color:white;">
+                        <input id="h" name="hour" placeholder="HOURS" type="text">&nbsp&nbsp&nbsp
+                        <input id="m" name="minutes" placeholder="MINUTES" type="text">&nbsp&nbsp&nbsp
+                        <input id="mer1" type="radio" name="meridian" value="AM">AM&nbsp&nbsp&nbsp
+                        <input id="mer2" type="radio" name="meridian" value="PM">PM&nbsp&nbsp&nbsp
+                    </form>
+                </td></tr>
+            </table>
+        </div>       
+    </div>
+    
+    <div id="fwd1">
+        <table width="100%" height="100%" align="center" valign="center">
+        <tr><td>
+            <img src="images/fwd.png" width="70px" onclick="ValidationEvent()"/>
+        </td></tr>
+        </table>
+    </div>
+
+    <div id="back1">
+       <table width="100%" height="100%" align="center" valign="center">
+       <tr><td>
+          <img id="hide_setAlarm" src="images/back.png" width="70px" onclick="hide('set_bar_alarm')"/>
+       </td></tr>
+       </table>
+    </div>
 </div>
 
-<div id="setRemainder" style="  display:none;">
-    <form action="#" method="post" >
-        <input id="h" name="hour" placeholder="Hhgvhvghvh" type="text">
-        <input id="m" name="minutes" placeholder="Mfffffff" type="text">
-        <input id="mer1" type="radio" name="meridian" value="AM">AM
-        <input id="mer2" type="radio" name="meridian" value="PM">PM
-        <input type="button" value="Set Alarm" onclick="">
-    </form>
-    <img id="hide_setAlarm" src="images/up_Arrow.png" width="50px" onclick="hide('setRemainder')"/>
+<div id="set_bar_remainder">
+    <div id="setRemainder">
+        <div id="set2">
+            <table width="100%" height="100%" align="center" valign="center">
+                <tr><td>
+                    <form action="#" method="post" style="color:white;">
+                        <input id="h" name="hour" placeholder="HOUR" type="text">&nbsp&nbsp&nbsp
+                        <input id="m" name="minutes" placeholder="MINUTES" type="text">&nbsp&nbsp&nbsp
+                        <input id="mer1" type="radio" name="meridian" value="AM">AM&nbsp&nbsp&nbsp
+                        <input id="mer2" type="radio" name="meridian" value="PM">PM&nbsp&nbsp&nbsp<br><br>
+                        <textarea rows="2" cols="70" placeholder="Type your message here..."></textarea>
+                    </form>
+                </td></tr>
+            </table>
+        </div>        
+    </div>
+
+    <div id="fwd2">
+        <table width="100%" height="100%" align="center" valign="center">
+        <tr><td>
+            <img src="images/fwd.png" width="70px" onclick=""/>
+        </td></tr>
+        </table>
+    </div>
+
+    <div id="back2">
+        <table width="100%" height="100%" align="center" valign="center">
+        <tr><td>
+            <img id="hide_setAlarm" src="images/back.png" width="70px" onclick="hide('set_bar_remainder')"/>
+        </td></tr>
+        </table>
+    </div>
 </div>
+
 
 <div id= "status_bar">
     <div id="upcomingAlarm">
@@ -110,8 +164,12 @@
     <div id="upcoming_remainders">
     </div>
 
-    <div id="stopwatch">
+    <div id="countdown">
+        <div id="digits">
+            
+        </div>        
     </div>
+
 </div>
 
 
