@@ -2,13 +2,23 @@ var init = 1;
 var c_mil_sec = 0;
 var c_sec=0;
 var c_min=0;
-var c_hour=0;  
+var c_hour=0; 
+var lock = 1;
+
+function play()
+{
+	if(lock == 1)
+	{
+		startCountdown();
+	}
+}
 
 function startCountdown() 
 {
 
 	if(init == 1)
 	{
+		lock = 0;
 
 	    c_mil_sec += 1;
 
@@ -39,6 +49,7 @@ function startCountdown()
 function stopCountdown()
 {
 	init = 0;
+	lock = 1;
 }
 
 function resetCountdown()
@@ -48,8 +59,6 @@ function resetCountdown()
 	c_sec=0;
 	c_min=0;
 	c_hour=0;  
-	init = 1;
-document.getElementById('digits').innerHTML = addZero(c_hour)+':'+addZero(c_min)+':'+addZero(c_sec)+':'+addZero(c_mil_sec);
+	setTimeout(function() {init = 1}, 100);
+	document.getElementById('digits').innerHTML = addZero(c_hour)+':'+addZero(c_min)+':'+addZero(c_sec)+':'+addZero(c_mil_sec);
 }
-
-
